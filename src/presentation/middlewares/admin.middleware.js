@@ -1,12 +1,9 @@
-function isAdmin(req, res, next) {
-    // this middleware must run AFTER authenticateToken
-    const { roles } = req.user;
+export const isAdmin = (req, res, next) => {
+const user = req.user;
 
-    if (!roles || !roles.includes('admin')) {
-        return res.status(403).json({ message: 'Access denied. Administrator role required.' });
-    }
-
-    next();
+if (!user || !user.roles.includes('admin')) {
+    return res.status(403).json({ message: 'Acceso denegado' });
 }
 
-module.exports = isAdmin;
+    next();
+};
