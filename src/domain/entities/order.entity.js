@@ -1,5 +1,5 @@
 class Order {
-    constructor({ id, userId, products, total, status = 'PENDING' }) {
+    constructor( id, userId, products, total, status) {
         this.id = id;
         this.userId = userId;
         this.products = products;
